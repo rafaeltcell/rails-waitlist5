@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GettingStarted</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%- if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <%- if alert%>
+    <p class="alert"><%= alert %></p>
+  <% end %>
+  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+    <div class="container">
+      <%- if user_signed_in? %>
+        <div class="pull-right">
+          <div class="signed-in-user">
+            <%= "Hi, #{current_user.email}!" %>
+          </div>
+        </div>
+      <% end %>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+
+  <%= yield :javascript %>
+
+</body>
+</html>

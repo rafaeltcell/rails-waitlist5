@@ -1,2 +1,2 @@
-# rails-waitlist5
-waitlist for rails 5
+# rails-waitlist
+a waitlist implemented in rails
