@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
 
 gem 'rails', '5.0.0.1'
 gem 'pg'
@@ -19,6 +18,8 @@ gem 'jquery-rails'
 gem 'jbuilder'
 
 gem 'devise'
+
+gem 'rails-controller-testing'
 
 group :development do
   gem 'capistrano-rails'
