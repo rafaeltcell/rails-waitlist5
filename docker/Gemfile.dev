@@ -21,6 +21,8 @@ gem 'devise'
 
 gem 'rails-controller-testing'
 
+gem 'grape', '0.10.1'
+
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
@@ -33,6 +35,10 @@ group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
+end
+
+group :passenger_server do
+  gem 'passenger', require: 'phusion_passenger/rack_handler'
 end
 
 group :puma_server do
