@@ -16,6 +16,6 @@ class FilesController < ApplicationController
   end
 
   def big_transfer_file
-    send_file '/app/huge_file.csv', :type => 'text/csv; charset=utf-8'
+    send_file '/app/views/files/huge_file.csv', :type => 'text/csv; charset=utf-8'
   end
 end
