@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   get '/some/:name', controller: :welcome, action: :some
 
+  get '/big_transfer', controller: :files, action: :big_transfer
+  get '/big_transfer_file', controller: :files, action: :big_transfer_file
+
   root 'welcome#index'
 
 end
