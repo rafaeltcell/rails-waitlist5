@@ -32,6 +32,18 @@ services:
     volumes_from:
       - box
 
+  passenger_web:
+    build: .
+    command: sh -c "bundle install && bundle exec passenger start --port 3033"
+    ports:
+      - "3033:3033"
+    links:
+      - postgreshost
+    volumes:
+      - .:/app
+    volumes_from:
+      - box
+
   tcell_puma_web:
     build: .
     command: sh -c "bundle install && bundle exec puma -C config/puma.rb"
@@ -102,7 +114,7 @@ services:
 
   tcell_passenger_local_web:
     build: .
-    command: sh -c "cd /tcellagent_src && bundle && bundle exec rake compile && cd /app && bundle && bundle exec passenger start"
+    command: sh -c "cd /tcellagent_src && bundle && bundle exec rake compile && cd /app && bundle && bundle exec passenger start --port 3033"
     ports:
       - "3033:3033"
     links:
